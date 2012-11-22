@@ -26,7 +26,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-if ( ! class_exists( 'Simple_Portfolio_Items' ) ) :
+if ( ! class_exists( 'Simple_Portfolio_Items') ) :
 
 /**
  * So that themes and other plugins can customise the text domain, the Simple_Portfolio_Items
@@ -203,6 +203,12 @@ class Simple_Portfolio_Items {
 				<input type='date' id='portfolio-item-thumbnail' name='portfolio-item-thumbnail' value='<?php echo esc_attr( get_post_meta( $object->ID, '_portfolio-item-thumbnail', true ) ); ?>' />
 			</label>
 		</p>
+		<p>
+			<label for='portfolio-item-gallery-xml-url'>
+				<?php _e( 'Gallery XML URL:', self::$text_domain  ); ?>
+				<input type='date' id='portfolio-item-gallery-xml-url' name='portfolio-item-gallery-xml-url' value='<?php echo esc_attr( get_post_meta( $object->ID, '_portfolio-item-gallery-xml-url', true ) ); ?>' />
+			</label>
+		</p>
 
 <?php
 	}
@@ -222,7 +228,8 @@ class Simple_Portfolio_Items {
 		$meta = array(
 			'portfolio-item-client',
 			'portfolio-item-scope',
-			'portfolio-item-thumbnail'
+			'portfolio-item-thumbnail',
+			'portfolio-item-gallery-xml-url'
 		);
 
 		foreach ( $meta as $meta_key ) {
@@ -325,6 +332,20 @@ class Simple_Portfolio_Items {
 			$post_ID = $GLOBALS['post']->ID;
 
 		return get_post_meta($post_ID, '_portfolio-item-thumbnail', true);
+
+	}	
+	
+	/**
+	* Get the item's gallery xml url
+	*
+	* @param int $post_ID Post ID. Defaults to the current post's ID
+	*/
+	public static function get_gallery_xml_url( $post_ID = 0 ) {
+
+		if ( absint($post_ID) === 0 )
+			$post_ID = $GLOBALS['post']->ID;
+
+		return get_post_meta($post_ID, '_portfolio-item-gallery-xml-url', true);
 
 	}
 	

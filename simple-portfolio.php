@@ -117,6 +117,8 @@ class Simple_Portfolio_Items {
 			'supports' => array('title', 'editor',  'excerpt', 'custom-fields')
 		); 
 		
+		$args = apply_filters('simple_portfolio_register_args',$args);
+		
 		register_post_type( self::$post_type_name , $args );
 	}
 
@@ -203,12 +205,7 @@ class Simple_Portfolio_Items {
 				<input type='date' id='portfolio-item-thumbnail' name='portfolio-item-thumbnail' value='<?php echo esc_attr( get_post_meta( $object->ID, '_portfolio-item-thumbnail', true ) ); ?>' />
 			</label>
 		</p>
-		<p>
-			<label for='portfolio-item-gallery-xml-url'>
-				<?php _e( 'Gallery XML URL:', self::$text_domain  ); ?>
-				<input type='date' id='portfolio-item-gallery-xml-url' name='portfolio-item-gallery-xml-url' value='<?php echo esc_attr( get_post_meta( $object->ID, '_portfolio-item-gallery-xml-url', true ) ); ?>' />
-			</label>
-		</p>
+
 
 <?php
 	}
@@ -229,7 +226,6 @@ class Simple_Portfolio_Items {
 			'portfolio-item-client',
 			'portfolio-item-scope',
 			'portfolio-item-thumbnail',
-			'portfolio-item-gallery-xml-url'
 		);
 
 		foreach ( $meta as $meta_key ) {
@@ -250,6 +246,9 @@ class Simple_Portfolio_Items {
 			elseif ( $new_meta_value && $new_meta_value != $meta_value )
 				update_post_meta( $post_id, '_' . $meta_key , $new_meta_value );
 		}
+		
+		do_action('simple_portfolio_additional_meta', $post_id);
+		
 	}
 
 	

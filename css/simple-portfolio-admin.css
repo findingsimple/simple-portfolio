@@ -31,3 +31,7 @@
                 background-size: 32px 32px;
             }        
         }
+	#portfolio-item-client {width:500px;margin-left:60px;}
+	#portfolio-item-scope {width:500px;margin-left:57px;}
+	#portfolio-item-thumbnail {width:500px;margin-left:33px;}
+	#portfolio-item-gallery-xml-url {width:500px;}

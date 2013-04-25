@@ -114,7 +114,7 @@ class Simple_Portfolio_Items {
 			'menu_position' => null,
 			'taxonomies' => array(''),
 			'show_in_nav_menus' => false,
-			'supports' => array('title', 'editor',  'excerpt', 'custom-fields', 'page-attributes')
+			'supports' => array('title', 'editor',  'excerpt', 'custom-fields', 'page-attributes', 'thumbnail')
 		); 
 		
 		$args = apply_filters('simple_portfolio_register_args',$args);

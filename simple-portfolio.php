@@ -351,7 +351,7 @@ class Simple_Portfolio_Items {
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post_ID ) );
 		
 		if ( $image[0] )
-			return $image[0]
+			return $image[0];
 		else
 			return false;
 	

@@ -329,8 +329,14 @@ class Simple_Portfolio_Items {
 
 		if ( absint($post_ID) === 0 )
 			$post_ID = $GLOBALS['post']->ID;
+			
+		$thumbnail_meta = get_post_meta($post_ID, '_portfolio-item-thumbnail', true);
+		
+		$thumbnail = false;
+			
+		$thumbnail = ( $thumbnail_meta ) ? $thumbnail_meta : get_the_post_thumbnail( $post_ID );	
 
-		return get_post_meta($post_ID, '_portfolio-item-thumbnail', true);
+		return $thumbnail;
 
 	}	
 	

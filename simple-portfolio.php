@@ -331,14 +331,31 @@ class Simple_Portfolio_Items {
 			$post_ID = $GLOBALS['post']->ID;
 			
 		$thumbnail_meta = get_post_meta($post_ID, '_portfolio-item-thumbnail', true);
+					
+		$thumbnail = ( $thumbnail_meta ) ? $thumbnail_meta : self::get_thumb( $post_ID )  );	
 		
-		$thumbnail = false;
-			
-		$thumbnail = ( $thumbnail_meta ) ? $thumbnail_meta : wp_get_attachment_image_src( get_post_thumbnail_id( $post_ID ) );	
-
 		return $thumbnail;
 
 	}	
+
+	/**
+	* Get the item's thumbnail url
+	*
+	* @param int $post_ID Post ID. Defaults to the current post's ID
+	*/
+	public static function get_thumb( $post_ID = 0  ) {
+
+		if ( absint($post_ID) === 0 )
+			$post_ID = $GLOBALS['post']->ID;
+	
+		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post_ID );
+		
+		if ( $image[0] )
+			return $image[0]
+		else
+			return false;
+	
+	}
 	
 	/**
 	* Get the item's gallery xml url

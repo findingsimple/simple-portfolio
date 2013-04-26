@@ -332,7 +332,7 @@ class Simple_Portfolio_Items {
 			
 		$thumbnail_meta = get_post_meta($post_ID, '_portfolio-item-thumbnail', true);
 					
-		$thumbnail = ( $thumbnail_meta ) ? $thumbnail_meta : self::get_thumb( $post_ID )  );	
+		$thumbnail = ( $thumbnail_meta ) ? $thumbnail_meta : self::get_thumb( $post_ID );	
 		
 		return $thumbnail;
 

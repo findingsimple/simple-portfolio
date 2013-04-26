@@ -348,7 +348,7 @@ class Simple_Portfolio_Items {
 		if ( absint($post_ID) === 0 )
 			$post_ID = $GLOBALS['post']->ID;
 	
-		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post_ID );
+		$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post_ID ) );
 		
 		if ( $image[0] )
 			return $image[0]

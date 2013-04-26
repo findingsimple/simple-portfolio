@@ -334,7 +334,7 @@ class Simple_Portfolio_Items {
 		
 		$thumbnail = false;
 			
-		$thumbnail = ( $thumbnail_meta ) ? $thumbnail_meta : wp_get_attachment_image_src( get_the_post_thumbnail_id( $post_ID ) );	
+		$thumbnail = ( $thumbnail_meta ) ? $thumbnail_meta : wp_get_attachment_image_src( get_post_thumbnail_id( $post_ID ) );	
 
 		return $thumbnail;
 

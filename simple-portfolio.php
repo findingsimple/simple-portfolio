@@ -190,19 +190,19 @@ class Simple_Portfolio_Items {
 		<p>
 			<label for='portfolio-item-client'>
 				<?php _e( 'Client:', self::$text_domain ); ?>
-				<input type='date' id='portfolio-item-client' name='portfolio-item-client' value='<?php echo esc_attr( get_post_meta( $object->ID, '_portfolio-item-client', true ) ); ?>' />
+				<input type='text' id='portfolio-item-client' name='portfolio-item-client' value='<?php echo esc_attr( get_post_meta( $object->ID, '_portfolio-item-client', true ) ); ?>' />
 			</label>
 		</p>
 		<p>
 			<label for='portfolio-item-scope'>
 				<?php _e( 'Scope:', self::$text_domain ); ?>
-				<input type='date' id='portfolio-item-scope' name='portfolio-item-scope' value='<?php echo esc_attr( get_post_meta( $object->ID, '_portfolio-item-scope', true ) ); ?>' />
+				<input type='text' id='portfolio-item-scope' name='portfolio-item-scope' value='<?php echo esc_attr( get_post_meta( $object->ID, '_portfolio-item-scope', true ) ); ?>' />
 			</label>
 		</p>
 		<p>
 			<label for='portfolio-item-thumbnail'>
 				<?php _e( 'Thumbnail:', self::$text_domain  ); ?>
-				<input type='date' id='portfolio-item-thumbnail' name='portfolio-item-thumbnail' value='<?php echo esc_attr( get_post_meta( $object->ID, '_portfolio-item-thumbnail', true ) ); ?>' />
+				<input type='text' id='portfolio-item-thumbnail' name='portfolio-item-thumbnail' value='<?php echo esc_attr( get_post_meta( $object->ID, '_portfolio-item-thumbnail', true ) ); ?>' />
 			</label>
 		</p>
 

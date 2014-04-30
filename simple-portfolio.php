@@ -114,7 +114,8 @@ class Simple_Portfolio_Items {
 			'menu_position' => null,
 			'taxonomies' => array(''),
 			'show_in_nav_menus' => false,
-			'supports' => array('title', 'editor', 'excerpt', 'custom-fields', 'page-attributes', 'thumbnail' )
+			'supports' => array('title', 'editor', 'excerpt', 'custom-fields', 'page-attributes', 'thumbnail' ),
+			'menu_icon' => ''
 		); 
 		
 		$args = apply_filters('simple_portfolio_register_args',$args);
@@ -158,12 +159,9 @@ class Simple_Portfolio_Items {
 	 */
 	public static function enqueue_admin_styles_and_scripts() {
 				
-		if ( is_admin() ) {
-	
-			wp_register_style( 'simple-portfolio', self::get_url( '/css/simple-portfolio-admin.css', __FILE__ ) , false, '1.0' );
-			wp_enqueue_style( 'simple-portfolio' );
-		
-		}
+			?>
+			<style>#adminmenu .menu-icon-simple_portfolio div.wp-menu-image:before { content: "\f337"; }</style>
+			<?php
 		
 	}
 	
